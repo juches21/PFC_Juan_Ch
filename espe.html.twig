@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Edición  especial</title>
+
+		<link rel="icon" href="imagenes/iconos/clasico.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+
+
+
+
+
+	
+
+     <style type="text/css">
+            button { background-color:#1C57F4; color:white }
+       
+            body {font-family:Ginebra; font-size:20px;background-color:#c8c8c8; color:#c8c8c8}
+            
+        </style>
+
+</head>
+<body  style="background-color: #c8c8c8;color: #c8c8c8">
+<div class="container">
+
+<div class="row" style="background-color: #EA8B76;">
+	<div class="col-2" style="background-color: #EA8B76;">
+	<img src="imagenes/spock.png"width="100%" Alt="es la imagen de una mano realizando el saludo de Star Trek (cabezera)">
+	</div>
+	<div class="col-8" style="background-color: #EA8B76;">
+		<h1>
+			Jugar piedra papel o tijera
+		</h1>
+		<h2>
+			Edición Especial</h2>
+	</div>
+
+	   <div class="col-2 " style="background-color: #EA8B76;">
+            
+
+
+			<nav class="navbar" style="background-color:#EA8B76;">
+			
+			<ul class="navbar-nav"style="background-color:#EA8B76;">
+							<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/home" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">Menú</a>
+							</li>
+						
+							<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/clasico" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">clasico</a>
+							</li>
+
+							<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/top" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">Clasificación</a>
+							</li>
+
+								<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/logout" style=" font-family:Ginebra; font-size:20px;background-color:#5A86FC;  color:white ; border: 1px solid #000; ">Cerrar sesión</a>
+							</li>
+			
+			</nav>
+
+      </div>
+
+
+	
+</div>
+
+
+<div class="row"  style=" margin-top: 10px;margin-bottom: 10px";>
+	<div class="col-3" style="background-color: #7f7f7f;">
+		<br><h1>
+			Normas</h1>
+		<p>
+			escoge una de las tres opciones
+		
+			luego dale al boton "enviar"
+		
+			<p>la cpu generrara otra eleccion aleatoria
+	
+			<p>el resultado de cada enfrentamiento se mostrara por pantalla
+	
+			<p>dependiendo del resultado se sumarán puntos a tu puntaje 
+			<br>
+			<br>si ganas se suman 3 puntos 
+			<br> Si empatas 1 puntos
+			<br> Si pierdes 0 puntos
+			<br>
+			<b> suerte</b>
+			</p>
+	
+	</div>
+	<div class="col-3" style="background-color: #7f7f7f; text-align: center; ">
+		<form name="elc">
+			<br><input type="radio" name="eleccion" id="piedra" value="piedra">
+			<img src="/imagenes/piedra.png" height="100px"Alt="es una piedra (seleccionable)">
+			<br><input type="radio" name="eleccion" id="papel" value="papel">
+			<img src="imagenes/papel.png" height="100px" Alt="es un papel(seleccionable)">
+			<br><input type="radio" name="eleccion" id="tijeras" value="tijeras">
+			<img src="imagenes/tijeras.png" height="100px"Alt="son unas tijeras(seleccionable)">
+			<br><input type="radio" name="eleccion" id="lagarto" value="lagarto">
+			<img src="imagenes/lagarto.png" height="100px"Alt="es un lagarto (seleccionable)">
+			<br><input type="radio" name="eleccion" id="spock" value="spock">
+			<img src="imagenes/spock.png" height="100px"Alt="es la imagen de una mano realizando el saludo de Star Trek  (seleccionable)" >
+			</form>
+			</div>
+		<div class="col-6" style="background-color: #7f7f7f;">
+		
+		
+			<p>
+				<h2 >GUIA:
+					<p><img src="imagenes/especial.png" width="100%" Alt=">
+					</p>
+				</h2>
+			</p>
+		</div>
+		</div>
+		<div class="row" style="background-color: #7f7f7f;"> 
+		<div class="col-3">
+			<div>
+								<br><button type="button" onclick="recogerDatos()">enviar</button>
+						
+		</div></div>
+
+			<div class="col-6" >
+			 {% for student in nombre %}
+				 <h3>puntos totales de  {{student.username}}:</h2>
+       		 <h2>{{ student.puntos}}</h2>
+		    
+		
+        {% endfor %}  
+			</div>
+
+			<div class="col-3" >
+			 {% for student in nombre %}
+       		 <h3>Ultimo resultado:</h1>
+		     <h2>{{ student.ultimo}}</h1>
+		
+        {% endfor %} 
+			</div>
+								
+		</div>
+
+
+	
+
+	<script type="text/javascript">
+		
+// 1 = piedra
+// 2 = papel
+// 3 = tijera
+// 4 = lagarto
+// 5 = spock 
+
+function recogerDatos(){
+	console.log("hola")
+	let eleccionjugador = " ";
+	let piedra = document.getElementById('piedra')
+	let papel = document.getElementById('papel')
+	let tijeras= document.getElementById("tijeras")
+	let lagarto= document.getElementById("lagarto")
+	let spock= document.getElementById("spock")
+var cpu = Math.floor(Math.random(1)*(5))+1
+// console.log(cpu)
+	if (piedra.checked) {
+		eleccionjugador = 1
+
+	}
+	else if (papel.checked) {
+		eleccionjugador = 2;
+		
+	}
+	else if (tijeras.checked) {
+		eleccionjugador = 3;
+		
+	}
+	else if (lagarto.checked) {
+		eleccionjugador = 4;
+		
+	}
+	else if (spock.checked) {
+		eleccionjugador = 5;
+		
+	}
+
+
+//piedra
+
+	if (eleccionjugador == 1){ 
+		if (cpu==1) {
+			window.alert ("piedra vs piedra = empate")
+			window.location.href = "https://127.0.0.1:8000/especIal"
+		
+		}
+		else if ( cpu == 2){
+			window.alert ("piedra vs papel = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		
+		else if ( cpu == 3){
+			window.alert ("piedra vs tijeras = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 4){
+			window.alert ("piedra vs lagarto = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 5){
+			window.alert ("piedra vs spock = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+	}
+
+
+
+
+//papel
+
+	if (eleccionjugador == 2){ 
+		if (cpu==1) {
+			window.alert ("papel vs piedra = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 2){
+			window.alert ("papel vs papel = empate")
+			window.location.href = "https://127.0.0.1:8000/especIal"
+		}
+		
+		else if ( cpu == 3){
+			window.alert (" papel vs tijeras = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 4){
+			window.alert (" papel vs lagarto = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 5){
+			window.alert (" papel vs spock = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+	}
+
+
+
+
+
+
+
+//tijeras
+
+	if (eleccionjugador == 3){ 
+		if (cpu==1) {
+			window.alert ("tijeras vs piedra = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 2){
+			window.alert ("tijeras vs papel = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		
+		else if ( cpu == 3){
+			window.alert (" tijeras vs tijeras = empate")
+			window.location.href = "https://127.0.0.1:8000/especIal"
+		}
+		else if ( cpu == 4){
+			window.alert (" tijeras vs lagarto = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 5){
+			window.alert (" tijeras vs spock = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+	}
+
+
+
+
+
+//lagarto
+
+	if (eleccionjugador == 4){ 
+		if (cpu==1) {
+			window.alert ("lagarto vs piedra = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 2){
+			window.alert ("lagarto vs papel = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		
+		else if ( cpu == 3){
+			window.alert (" lagarto vs tijeras = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 4){
+			window.alert (" lagarto vs lagarto = empate")
+			window.location.href = "https://127.0.0.1:8000/especIal"
+		}
+		else if ( cpu == 5){
+			window.alert (" lagarto vs spock = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+	}
+
+
+
+
+
+
+
+
+
+//spock
+	if (eleccionjugador == 5){ 
+		if (cpu==1) {
+			window.alert ("spock vs piedra = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 2){
+			window.alert ("spock vs papel = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		
+		else if ( cpu == 3){
+			window.alert (" spock vs tijeras = ganas")
+			 window.location.href = "https://127.0.0.1:8000/especlal"
+		}
+		else if ( cpu == 4){
+			window.alert (" spock vs lagarto = pierdes")
+			window.location.href = "https://127.0.0.1:8000/especiaI"
+		}
+		else if ( cpu == 5){
+			window.alert(" spock vs spock = empate")
+		
+			window.location.href = "https://127.0.0.1:8000/especIal"
+		}
+	}
+
+
+
+}</script>
+
+	
+	</body>
+</html>

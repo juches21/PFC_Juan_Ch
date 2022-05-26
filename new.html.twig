@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuario nuevo{% endblock %}
+
+{% block body %}
+<link rel="icon" href="imagenes/iconos/clasico.ico">
+     <style type="text/css">
+            button { background-color:#1C57F4; color:white }
+            form { text-align:center;font-size:25px; color:#c8c8c8}
+            body {font-family:Ginebra; font-size:25px;background-color:#c8c8c8; color:#c8c8c8}
+            
+        </style>
+    <div class="container">
+
+<div class="row" style="background-color: #EA8B76;color: white; margin-top:20px;">
+    
+    <div class="col-12" style="background-color: #EA8B76;;text-align:center;  ">
+	    <img src="imagenes/papel.png"width="15%">
+        <img src="imagenes/tijeras.png"width="15%"> 
+        
+         <img src="imagenes/spock.png"width="15%">
+	</div>
+	<div class="col-12" style="text-align:center; ">
+	    <h1>Crear Usuario</h1>
+	</div>
+</div>
+
+<div class="row" style="background-color: #7f7f7f;">
+
+
+    <div class="col-12" style="background-color:#7f7f7f;margin-top:80px;margin-bottom:80px; text-align:center">
+	    {{ include('user/_form.html.twig') }}
+        <p>volver al <a href="https://127.0.0.1:8000/">inicio</a></p>
+    </div>
+
+      
+</div>
+
+<div class="row" style="background-color: #EA8B76;color: white;">
+    
+    <div class="col-6" style="background-color: #EA8B76;text-align:center;  margin-top:80px">
+	    <img src="imagenes/lagarto.png"width="30%">
+	</div>
+    <div class="col-6" style="background-color: #EA8B76;text-align:center;  margin-top:80px">
+	    <img src="imagenes/piedra.png"width="30%">
+	</div>
+	
+</div>
+    
+
+
+{% endblock %}

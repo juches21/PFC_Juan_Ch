@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Edición  clasica</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+		<link rel="icon" href="imagenes/iconos/clasico.ico">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+
+
+
+
+
+
+     <style type="text/css">
+            button { background-color:#5A86FC; color:white }
+       
+            body {font-family:Ginebra; font-size:20px;background-color:#c8c8c8; color:#c8c8c8}
+            
+        </style>
+
+</head>
+<body  style="background-color: #c8c8c8;color: #c8c8c8">
+<div class="container">
+
+<div class="row" style="background-color: #EA8B76;">
+	<div class="col-2" style="background-color: #EA8B76;">
+	<img src="imagenes/piedra.png"width="100%">
+	</div>
+	<div class="col-8" style="background-color: #EA8B76;">
+		<h1>
+			Jugar piedra papel o tijera
+		</h1>
+		<h2>
+			Edición  Clasica</h2>
+	</div>
+
+	   <div class="col-2 " style="background-color: #EA8B76;">
+            
+
+
+			<nav class="navbar" style="background-color:#EA8B76;">
+			
+			<ul class="navbar-nav"style="background-color:#EA8B76;">
+							<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/home" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">Menú</a>
+							</li>
+						
+							<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/especial" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">especial</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="https://127.0.0.1:8000/top" style=" font-family:Ginebra; font-size:20px;background-color:#EA8B76; color:#c8c8c8">Clasificación</a>
+							</li>
+
+								<li class="nav-item">
+								<a  class="nav-link" href="https://127.0.0.1:8000/logout" style=" font-family:Ginebra; font-size:20px;background-color:#5A86FC; color:white ; border: 1px solid #000; ">Cerrar sesión</a>
+							</li>
+			
+			</nav>
+
+      </div>
+
+
+	
+</div>
+
+
+<div class="row"  style=" margin-top: 10px;margin-bottom: 10px";>
+	<div class="col-3" style="background-color: #7f7f7f;">
+		<br><h1>
+			Normas</h1>
+		<p >
+			escoge una de las tres opciones
+		
+			luego dale al boton "enviar"
+		
+			<p>la cpu generrara otra eleccion aleatoria
+	
+			<p>el resultado de cada enfrentamiento se mostrara por pantalla
+	
+			<p>dependiendo del resultado se sumarán puntos a tu puntaje 
+			<br>
+			<br>si ganas se suman 3 puntos 
+			<br> Si empatas 1 puntos
+			<br> Si pierdes 0 puntos
+			<br>
+			<b> suerte</b>
+			</p>
+	
+	</div>
+	<div class="col-3" style="background-color: #7f7f7f; text-align: center; ">
+		<form name="elc">
+			<br><input type="radio" name="eleccion" id="piedra" value="piedra">
+			<img src="/imagenes/piedra.png" height="100px">
+			<br><input type="radio" name="eleccion" id="papel" value="papel">
+			<img src="imagenes/papel.png" height="100px">
+			<br><input type="radio" name="eleccion" id="tijeras" value="tijeras">
+			<img src="imagenes/tijeras.png" height="100px">
+		</div>
+		<div class="col-6" style="background-color: #7f7f7f;">
+			<p>
+				<h2 >GUIA:
+					<p><img src="imagenes/clasico.png" width="100%">
+					</p>
+				</h2>
+			</p>
+		</div>
+		</div>
+		<div class="row" style="background-color: #7f7f7f;"> 
+		<div class="col-3">
+			<div>
+								<br><button type="button" onclick="recogerDatos()">enviar</button>
+								
+		</div>
+		</div>
+
+			<div class="col-6" >
+			 {% for student in nombre %}
+				 <h3>puntos totales de  {{student.username}}:</h2>
+       		 <h2>{{ student.puntos}}</h2>
+		    
+		
+        {% endfor %}  
+			</div>
+
+			<div class="col-3" >
+			 {% for student in nombre %}
+       		 <h3>Ultimo resultado:</h1>
+		     <h2>{{ student.ultimo}}</h1>
+		
+        {% endfor %} 
+			</div>
+								
+		</div>
+
+	
+
+
+		<script type="text/javascript">
+
+			// 1 = piedra
+			// 2 = papel
+			// 3 = tijera
+		
+			
+
+function recogerDatos() {
+
+
+
+let eleccionjugador = " ";
+let piedra = document.getElementById('piedra')
+let papel = document.getElementById('papel')
+let tijeras = document.getElementById("tijeras")
+
+var cpu = Math.floor(Math.random(1) * (3)) + 1
+// console.log(cpu)
+if (piedra.checked) {
+eleccionjugador = 1
+
+} else if (papel.checked) {
+eleccionjugador = 2;
+
+} else if (tijeras.checked) {
+eleccionjugador = 3;
+
+}
+
+
+// piedra
+
+if (eleccionjugador == 1) {
+if (cpu == 1) {
+window.alert("piedra vs piedra = empate")
+
+window.location.href = "https://127.0.0.1:8000/claslco"
+} else if (cpu == 2) {
+window.alert("piedra vs papel = pierdes")
+
+window.location.href = "https://127.0.0.1:8000/clasIco"
+} else if (cpu == 3) {
+window.alert("piedra vs tijeras = ganas")
+
+window.location.href = "https://127.0.0.1:8000/cIasico"
+}
+
+}
+
+
+// papel
+
+if (eleccionjugador == 2) {
+if (cpu == 1) {
+window.alert("papel vs piedra = ganas")
+
+window.location.href = "https://127.0.0.1:8000/cIasico"
+} else if (cpu == 2) {
+window.alert("papel vs papel = empate")
+
+window.location.href = "https://127.0.0.1:8000/claslco"
+} else if (cpu == 3) {
+window.alert(" papel vs tijeras = pierdes")
+
+window.location.href = "https://127.0.0.1:8000/clasIco"
+}
+
+}
+
+
+// tijeras
+
+if (eleccionjugador == 3) {
+if (cpu == 1) {
+window.alert("tijeras vs piedra = pierdes")
+
+window.location.href = "https://127.0.0.1:8000/clasIco"
+} else if (cpu == 2) {
+window.alert("tijeras vs papel = ganas")
+
+window.location.href = "https://127.0.0.1:8000/cIasico"
+} else if (cpu == 3) {
+window.alert(" tijeras vs tijeras = empate")
+
+window.location.href = "https://127.0.0.1:8000/claslco"
+
+}
+
+}
+
+
+}
+
+		</script>
+
+
+	
+	</body>
+</html>
+
+    
